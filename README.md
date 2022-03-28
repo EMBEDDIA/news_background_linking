@@ -1,4 +1,4 @@
-#L3i_Rochelle at TREC 2021 News Track
+# L3i_Rochelle at TREC 2021 News Track
 
 Welcome to the repository that stores [L3i](https://l3i.univ-larochelle.fr/ "L3i")'s participation at [TREC](https://trec.nist.gov/ "TREC") 2021 News Track.
 
