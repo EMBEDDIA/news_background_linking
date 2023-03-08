@@ -1,0 +1,192 @@
+{
+	"settings": {
+		"index.knn": true,
+		"analysis": {
+			"analyzer": {
+				"english_exact_stop": {
+				  "type": "standard",
+				  "stopwords": "_english_",
+				  "filter": [
+					"lowercase"       
+				  ]
+				},
+				"english_exact": {
+					"tokenizer": "standard",
+					"filter": [
+						"lowercase"
+					]
+				}
+			}
+		},
+		"index": {
+			"refresh_interval": "-1",
+			"number_of_shards": "5",
+			"number_of_replicas": "0"
+		}
+	},
+	"mappings": {
+		"dynamic": false,
+		"properties": {
+			"type": {
+				"type": "keyword"
+			},
+			"source": {
+				"type": "keyword"
+			},
+			"url": {
+				"type": "keyword"
+			},
+			"date": {
+				"type": "date"
+			},
+			"kicker": {
+				"type": "keyword"
+			},
+			"title": {
+				"type": "text",
+				"analyzer": "english",
+				"fields": {
+					"exact": {
+						"type": "text",
+						"analyzer": "english_exact"
+					},
+					"exact_stop": {
+						"type": "text",
+						"analyzer": "english_exact_stop"
+					}
+				}
+			},
+			"title_vector": {
+				"type": "knn_vector",
+				"dimension": 768
+			},
+			"title_lemma": {
+				"type": "text",
+				"analyzer": "english",
+				"fields": {
+					"exact": {
+						"type": "text",
+						"analyzer": "english_exact"
+					},
+					"exact_stop": {
+						"type": "text",
+						"analyzer": "english_exact_stop"
+					}
+				}
+			},
+			"body": {
+				"type": "text",
+				"analyzer": "english",
+				"fields": {
+					"exact": {
+						"type": "text",
+						"analyzer": "english_exact"
+					},
+					"exact_stop": {
+						"type": "text",
+						"analyzer": "english_exact_stop"
+					}
+				}
+			},
+			"body_vector": {
+				"type": "knn_vector",
+				"dimension": 768
+			},
+			"body_lemma": {
+				"type": "text",
+				"analyzer": "english",
+				"fields": {
+					"exact": {
+						"type": "text",
+						"analyzer": "english_exact"
+					},
+					"exact_stop": {
+						"type": "text",
+						"analyzer": "english_exact_stop"
+					}
+				}
+			}
+			,
+			"lead": {
+				"type": "text",
+				"analyzer": "english",
+				"fields": {
+					"exact": {
+						"type": "text",
+						"analyzer": "english_exact"
+					},
+					"exact_stop": {
+						"type": "text",
+						"analyzer": "english_exact_stop"
+					}
+				}
+			},
+			"lead_vector": {
+				"type": "knn_vector",
+				"dimension": 768
+			},
+			"lead_lemma": {
+				"type": "text",
+				"analyzer": "english",
+				"fields": {
+					"exact": {
+						"type": "text",
+						"analyzer": "english_exact"
+					},
+					"exact_stop": {
+						"type": "text",
+						"analyzer": "english_exact_stop"
+					}
+				}
+			},
+			"captions": {
+				"type": "text",
+				"analyzer": "english",
+				"fields": {
+					"exact": {
+						"type": "text",
+						"analyzer": "english_exact"
+					},
+					"exact_stop": {
+						"type": "text",
+						"analyzer": "english_exact_stop"
+					}
+				}
+			},
+			"captions_vector": {
+				"type": "knn_vector",
+				"dimension": 768
+			},
+			"captions_lemma": {
+				"type": "text",
+				"analyzer": "english",
+				"fields": {
+					"exact": {
+						"type": "text",
+						"analyzer": "english_exact"
+					},
+					"exact_stop": {
+						"type": "text",
+						"analyzer": "english_exact_stop"
+					}
+				}
+			},
+			"title_lead_vector": {
+				"type": "knn_vector",
+				"dimension": 768
+			},
+			"title_body_vector": {
+				"type": "knn_vector",
+				"dimension": 768
+			},
+			"title_body_captions_vector": {
+				"type": "knn_vector",
+				"dimension": 768
+			},
+			"links": {
+				"type": "keyword"
+			}
+			
+		}
+	}
+} 
